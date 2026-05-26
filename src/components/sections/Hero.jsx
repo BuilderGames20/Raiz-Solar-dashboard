@@ -92,7 +92,7 @@ export default function HeroSection() {
           <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-2xl p-6 flex gap-6 border border-white/60">
             <div className="flex flex-col items-center border-r border-gray-100 pr-6 justify-center">
               <div className="text-4xl mb-1">💧</div>
-              <span className="font-extrabold text-2xl text-gray-800 leading-none">90%</span>
+              <span className="font-extrabold text-2xl text-gray-800 leading-none">50%-90%</span>
               <span className="text-[0.6rem] font-bold text-gray-400 uppercase tracking-widest mt-1">Menos Água</span>
             </div>
             <div className="flex flex-col items-center justify-center pl-2">

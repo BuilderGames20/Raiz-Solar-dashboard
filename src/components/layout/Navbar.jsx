@@ -6,12 +6,12 @@ import { Sprout, Menu, X } from 'lucide-react';
    Rotas do menu principal
 ───────────────────────────────────────────── */
 const navLinks = [
-  { label: 'Início',      to: '/' },
-  { label: 'Soluções',    to: '/solucoes' },
-  { label: 'Produtos',    to: '/produtos' },
-  { label: 'Impacto',     to: '/impacto' },
-  { label: 'Sua Casa',    to: '/para-sua-casa' },
-  { label: 'Ouvidoria',   to: '/ouvidoria' },
+  { label: 'Início', to: '/' },
+  { label: 'Soluções', to: '/solucoes' },
+  { label: 'Produtos', to: '/produtos' },
+  { label: 'Impacto', to: '/impacto' },
+  { label: 'Sua Casa', to: '/para-sua-casa' },
+  { label: 'Ouvidoria', to: '/ouvidoria' },
 ];
 
 /* ─────────────────────────────────────────────
@@ -24,10 +24,10 @@ const linkBase =
   "after:transition-all after:duration-500 after:rounded-full hover:after:w-full";
 
 const linkInactive = "text-brand-muted hover:text-brand-green-dark";
-const linkActive   = "text-brand-green-dark after:!w-full";
+const linkActive = "text-brand-green-dark after:!w-full";
 
 export default function Navbar() {
-  const [isOpen,   setIsOpen]   = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
@@ -42,11 +42,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out overflow-hidden ${
-        scrolled
-          ? 'bg-white/90 backdrop-blur-2xl shadow-elevated py-3'
-          : 'bg-white/60 backdrop-blur-lg py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out overflow-hidden ${scrolled
+        ? 'bg-white/90 backdrop-blur-2xl shadow-elevated py-3'
+        : 'bg-white/60 backdrop-blur-lg py-5'
+        }`}
     >
       {/* Linha de acento superior */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-green-light/0 via-brand-green-light/60 to-brand-green-light/0" />
@@ -105,9 +104,8 @@ export default function Navbar() {
 
       {/* ── Menu Mobile ── */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="bg-white/95 backdrop-blur-2xl border-t border-brand-green-dark/5 px-6 py-6 space-y-1">
           {navLinks.map((link) => (
@@ -117,10 +115,9 @@ export default function Navbar() {
               end={link.to === '/'}
               onClick={handleMobileNav}
               className={({ isActive }) =>
-                `block font-inter text-base font-medium py-2.5 px-3 rounded-xl transition-all duration-200 ${
-                  isActive
-                    ? 'bg-brand-green-light/10 text-brand-green-dark font-semibold'
-                    : 'text-brand-muted hover:text-brand-green-dark hover:bg-brand-green-dark/4'
+                `block font-inter text-base font-medium py-2.5 px-3 rounded-xl transition-all duration-200 ${isActive
+                  ? 'bg-brand-green-light/10 text-brand-green-dark font-semibold'
+                  : 'text-brand-muted hover:text-brand-green-dark hover:bg-brand-green-dark/4'
                 }`
               }
             >

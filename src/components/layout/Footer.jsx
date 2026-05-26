@@ -49,15 +49,15 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-poppins font-bold text-lg leading-none tracking-premium">
-                  Raiz<span className="text-brand-green-glow">Hidroponia</span>
+                  Raiz<span className="text-brand-green-glow">Solar</span>
                 </span>
                 <span className="font-inter text-[0.5rem] font-medium text-white/40 tracking-wide-premium uppercase mt-0.5">
-                  Cultivo Inteligente
+                  Cultivo Inteligente1
                 </span>
               </div>
             </Link>
             <p className="font-inter text-sm text-white/45 leading-relaxed max-w-xs">
-              Soluções completas em hidroponia corporativa inteligente. 
+              Soluções completas em hidroponia corporativa inteligente.
               Unindo sustentabilidade e tecnologia agrícola avançada para um futuro mais verde.
             </p>
           </div>
@@ -67,10 +67,10 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold text-sm mb-5 tracking-premium text-white/90">Navegação</h4>
             <ul className="space-y-3">
               {[
-                { label: 'Início',    to: '/' },
+                { label: 'Início', to: '/' },
                 { label: 'Soluções', to: '/solucoes' },
-                { label: 'Impacto',  to: '/impacto' },
-                { label: 'Contato',  to: '/contato' },
+                { label: 'Impacto', to: '/impacto' },
+                { label: 'Contato', to: '/contato' },
               ].map(({ label, to }) => (
                 <li key={to}>
                   <Link
@@ -89,10 +89,10 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold text-sm mb-5 tracking-premium text-white/90">Soluções</h4>
             <ul className="space-y-3">
               {[
-                { label: 'Hortas Corporativas',    to: '/solucoes' },
+                { label: 'Hortas Corporativas', to: '/solucoes' },
                 { label: 'Hidroponia Residencial', to: '/para-sua-casa' },
-                { label: 'Sistemas IoT',           to: '/produtos' },
-                { label: 'Consultoria Verde',      to: '/contato' },
+                { label: 'Sistemas IoT', to: '/produtos' },
+                { label: 'Consultoria Verde', to: '/contato' },
               ].map(({ label, to }) => (
                 <li key={to}>
                   <Link
@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-brand-green-glow/70 flex-shrink-0 mt-0.5" />
-                <span className="font-inter text-sm text-white/45">Rua Verbo Divino, 2001<br/>São Paulo, SP</span>
+                <span className="font-inter text-sm text-white/45">Rua Verbo Divino, 2001<br />São Paulo, SP</span>
               </li>
             </ul>
           </div>
