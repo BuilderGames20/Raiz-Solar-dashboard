@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  body {
+    @apply bg-brand-bg font-inter text-brand-green-dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+    text-rendering: geometricPrecision;
+  }
+
+  ::selection {
+    background: rgba(135, 169, 34, 0.2);
+    color: #0A2E1F;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-cta text-white font-poppins font-semibold 
+           px-8 py-3.5 rounded-pill 
+           transition-all duration-300 ease-in-out
+           shadow-btn-depth hover:shadow-btn-depth-hover
+           active:scale-[0.97] active:shadow-inner-soft
+           relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-brand-green-dark text-brand-green-dark font-poppins font-semibold
+           px-8 py-3 rounded-pill
+           hover:bg-brand-green-dark hover:text-white
+           transition-all duration-300 ease-in-out
+           active:scale-[0.97];
+  }
+
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 xl:px-32;
+  }
+
+  .glass-card {
+    @apply bg-white/75 backdrop-blur-xl rounded-3xl border border-white/50 
+           shadow-glass;
+  }
+
+  .glass-card-hover {
+    @apply hover:shadow-glass-hover hover:bg-white/85 hover:-translate-y-1.5
+           transition-all duration-500 ease-out;
+  }
+
+  .premium-heading {
+    @apply font-poppins font-extrabold tracking-premium leading-premium;
+  }
+
+  .premium-body {
+    @apply font-inter leading-premium-body;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-green-dark via-brand-emerald to-brand-green-light 
+           bg-clip-text text-transparent;
+  }
+
+  .text-soft {
+    color: rgba(10, 46, 31, 0.55);
+  }
+
+  .text-softer {
+    color: rgba(10, 46, 31, 0.4);
+  }
+}
+
+/* Scrollbar customizado premium */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7FAF5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #87A922, #114232);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A4C639, #0A2E1F);
+}
+
+/* Premium wave SVG anti-aliasing */
+svg path, svg line, svg circle, svg rect {
+  shape-rendering: geometricPrecision;
+}
