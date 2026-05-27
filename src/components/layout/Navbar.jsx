@@ -59,7 +59,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-poppins font-bold text-xl tracking-premium text-brand-green-dark leading-none">
-              Raiz<span className="text-brand-green-light">Hidroponia</span>
+              Raiz<span className="text-brand-green-light">Solar</span>
             </span>
             <span className="font-inter text-[0.55rem] font-semibold text-brand-muted tracking-wide-premium mt-0.5 uppercase">
               Cultivo Inteligente

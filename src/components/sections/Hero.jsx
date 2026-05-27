@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Mail, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroImage from '../../assets/hydroponic-shelf.png';
 
 export default function HeroSection() {
@@ -52,7 +52,7 @@ export default function HeroSection() {
       <div className="absolute top-20 right-[42%] w-4 h-4 rounded-full bg-[#a8d072]/50 blur-[2px] z-0 pointer-events-none" />
 
       {/* ── Conteúdo Principal ── */}
-      <div className="relative z-10 container mx-auto px-10 pt-28 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-10 pt-32 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* Coluna Esquerda: Texto + CTA + Card Stats */}
         <div className="flex flex-col items-start">
@@ -67,16 +67,17 @@ export default function HeroSection() {
           <h1 className="text-6xl font-extrabold text-gray-800 leading-[1.08] mb-6">
             Sua Horta <br />
             <span className="relative inline-block mt-2">
-              <span className="relative z-10">em Casa</span>
-              <span className="absolute bottom-1 left-[-2%] w-[104%] h-[18px] bg-[#c8e0b8] -z-10 -rotate-1 rounded-sm" />
+              <span className="relative z-10 bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent">
+                em Casa
+              </span>
             </span>
           </h1>
 
           {/* Descrição */}
-          <p className="text-gray-500 text-lg mb-10 max-w-md leading-relaxed font-inter">
-            Cultive hortaliças frescas, <strong className="text-gray-700 font-bold">sem agrotóxicos</strong> e 100%{' '}
-            <strong className="text-gray-700 font-bold">sustentáveis</strong> diretamente na sua cozinha ou varanda.
-            Reduza despesas com o mercado e <strong className="text-gray-700 font-bold">colha saúde</strong> todos os dias.
+          <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-md leading-relaxed font-inter">
+            Cultive hortaliças frescas, <strong className="text-gray-800 font-bold">sem agrotóxicos</strong> e 100%{' '}
+            <strong className="text-gray-800 font-bold">sustentáveis</strong> diretamente na sua cozinha ou varanda.
+            Reduza despesas com o mercado e <strong className="text-gray-800 font-bold">colha saúde</strong> todos os dias.
           </p>
 
           {/* Botão CTA */}
@@ -135,29 +136,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Card de Contato Rápido (Flutuante) ── */}
-      <div className="relative z-20 mx-auto w-fit px-4 pb-12">
-        <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-2xl px-8 py-5 flex flex-col sm:flex-row gap-6 sm:gap-8 border border-white/60">
-          <div className="flex items-center gap-4">
-            <Mail className="text-[#4A8532] w-5 h-5 shrink-0" />
-            <div>
-              <p className="font-bold text-gray-800 text-sm">Contato rápido</p>
-              <p className="text-gray-500 text-[0.8rem] mt-0.5 font-inter">comercial@raizsolar.com.br</p>
-              <p className="text-gray-500 text-[0.8rem] font-inter">(11) 3090-2838</p>
-            </div>
-          </div>
-          <div className="hidden sm:block w-px bg-gray-200 my-1" />
-          <div className="flex items-center gap-4">
-            <MapPin className="text-[#4A8532] w-5 h-5 shrink-0" />
-            <div>
-              <p className="font-bold text-gray-800 text-sm">Endereço</p>
-              <p className="text-gray-500 text-[0.8rem] mt-0.5 font-inter leading-tight">
-                Rua Verbo Divino, 2001 - CJ 305<br />São Paulo - SP / CEP 04719-002
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Cards de contato removidos — foco residencial direto */}
 
     </div>
   );

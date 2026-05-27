@@ -5,7 +5,6 @@ import {
   Wind,
   HeartPulse,
   TrendingUp,
-  ShieldCheck,
   Sprout,
   ArrowRight,
   Globe,
@@ -242,12 +241,9 @@ export default function Impacto() {
                 {/* Número gigante */}
                 <div className="shrink-0">
                   <div className="flex items-start gap-1">
-                    <AnimatedStat
-                      value={90}
-                      suffix="%"
-                      active={gridVisible}
-                      className="font-black text-[6rem] lg:text-[8rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#0ea5e9] via-[#2563eb] to-[#1D4330] select-none"
-                    />
+                    <span className="font-black text-[6rem] lg:text-[8rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#0ea5e9] via-[#2563eb] to-[#1D4330] select-none">
+                      50%-90%
+                    </span>
                   </div>
                   {/* Ícone gota grande */}
                   <div className="flex items-center gap-2 mt-2">
@@ -408,14 +404,6 @@ export default function Impacto() {
                 </p>
               </div>
 
-              {/* Stat pill escuro */}
-              <div className="flex items-center gap-2.5 mt-6 bg-white/8 border border-white/10 rounded-2xl px-4 py-3 w-fit relative z-10">
-                <Globe className="w-4 h-4 text-[#A4C639]" />
-                <div>
-                  <p className="text-[0.6rem] text-white/45 font-inter uppercase tracking-widest leading-none">Equivalente a</p>
-                  <p className="text-xs font-bold text-white mt-0.5">−2.4 ton CO₂/ano por unid.</p>
-                </div>
-              </div>
             </div>
 
             {/* ── Card 4: Retorno em Saúde e ESG (span 2) ── */}
@@ -449,48 +437,9 @@ export default function Impacto() {
                 aria-hidden="true"
               />
 
-              <div className="relative z-10 flex flex-col md:flex-row gap-10 items-start">
+              <div className="relative z-10 flex flex-col gap-6">
 
-                {/* Coluna ESG */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#87A922] to-[#4A8532] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-400">
-                      <ShieldCheck className="w-6 h-6 text-white" strokeWidth={1.5} />
-                    </div>
-                    <span className="text-[0.6rem] font-bold text-[#87A922] tracking-widest uppercase border border-[#87A922]/25 bg-[#87A922]/8 px-3 py-1 rounded-full">Para Empresas</span>
-                  </div>
-                  <h3 className="text-2xl font-extrabold text-[#0A2E1F] tracking-tight leading-tight mb-3">
-                    Metas ESG cumpridas.
-                    <br />
-                    <span className="text-[#4A8532]">Relatório incluso.</span>
-                  </h3>
-                  <p className="text-[#5A7A6B] text-sm font-inter leading-relaxed mb-5">
-                    Nossos sistemas geram relatórios de impacto ambiental prontos
-                    para auditorias ESG, B-Corp e certificações GRI. Comprove o
-                    compromisso da sua empresa com a sustentabilidade.
-                  </p>
-                  {/* Métricas */}
-                  <div className="flex gap-6">
-                    <div>
-                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">
-                        <AnimatedStat value={98} suffix="%" active={gridVisible} />
-                      </p>
-                      <p className="text-[0.6rem] text-[#5A7A6B] font-inter mt-1 uppercase tracking-widest">Satisfação corporativa</p>
-                    </div>
-                    <div className="w-px h-10 bg-[#0A2E1F]/10 self-center" />
-                    <div>
-                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">
-                        <AnimatedStat value={120} suffix="+" active={gridVisible} />
-                      </p>
-                      <p className="text-[0.6rem] text-[#5A7A6B] font-inter mt-1 uppercase tracking-widest">Empresas parceiras</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="hidden md:block w-px self-stretch bg-gradient-to-b from-transparent via-[#0A2E1F]/10 to-transparent" aria-hidden="true" />
-
-                {/* Coluna Saúde Familiar */}
+                {/* Coluna Saúde Familiar — agora única coluna */}
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#9f1239] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-400">
@@ -516,7 +465,7 @@ export default function Impacto() {
                       <div key={item.label}>
                         <div className="flex justify-between text-[0.62rem] font-bold text-[#5A7A6B] font-inter mb-1.5">
                           <span className="uppercase tracking-wide">{item.label}</span>
-                          <span className="text-[#87A922]">{item.invert ? '−70%' : '+53%'} com Raiz</span>
+                          <span className="text-[#87A922]">{item.invert ? '20%-70%' : '+53%'} com Raiz</span>
                         </div>
                         <div className="flex gap-1.5 h-2">
                           <div

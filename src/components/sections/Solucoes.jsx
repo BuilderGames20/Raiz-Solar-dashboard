@@ -1,20 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
   Leaf,
-  Smartphone,
   Sun,
   Droplets,
   ArrowRight,
-  TrendingUp,
-  ShieldCheck,
-  Users,
   Home,
   Salad,
   PiggyBank,
   CheckCircle2,
   Wifi,
 } from 'lucide-react';
-import imgCorp from '../../assets/horta-corporativa.png';
 import imgResid from '../../assets/horta-residencial-2.png';
 
 /* ─────────────────────────────────────────────
@@ -37,23 +32,6 @@ function useInView(threshold = 0.12) {
 /* ─────────────────────────────────────────────
    Dados
 ───────────────────────────────────────────── */
-const corporateFeatures = [
-  {
-    icon: <ShieldCheck className="w-5 h-5" />,
-    label: 'Adequação ESG',
-    desc: 'Relatórios de impacto ambiental e certificações inclusas.',
-  },
-  {
-    icon: <Users className="w-5 h-5" />,
-    label: 'Gestão e Manutenção Inclusa',
-    desc: 'Equipe técnica dedicada. Você não precisa se preocupar com nada.',
-  },
-  {
-    icon: <TrendingUp className="w-5 h-5" />,
-    label: 'Clima Organizacional',
-    desc: 'Ambientes biofílicos aumentam a produtividade em até 15%.',
-  },
-];
 
 const residentialFeatures = [
   {
@@ -87,13 +65,6 @@ const techPillars = [
     title: 'Iluminação Espectral',
     desc: 'LEDs de espectro completo calibrados para cada fase de crescimento. Consumo 80% menor que a iluminação convencional.',
     accent: 'from-amber-400/30 to-yellow-500/10',
-  },
-  {
-    id: 'app',
-    icon: <Smartphone className="w-8 h-8" />,
-    title: 'App de Monitoramento IoT',
-    desc: 'Acompanhe pH, nutrientes, luminosidade e ciclo de crescimento em tempo real pelo seu smartphone — de qualquer lugar.',
-    accent: 'from-emerald-400/30 to-emerald-600/10',
   },
 ];
 
@@ -130,7 +101,6 @@ function FeatureItem({ icon, label, desc, light = false }) {
 ───────────────────────────────────────────── */
 export default function Solucoes() {
   const [headerRef, headerVisible] = useInView(0.1);
-  const [corpRef, corpVisible] = useInView(0.08);
   const [residRef, residVisible] = useInView(0.08);
   const [techRef, techVisible] = useInView(0.1);
 
@@ -224,190 +194,7 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          SOLUÇÃO 1: CORPORATIVO — Imagem Esq, Card Dir sobreposto
-      ════════════════════════════════════════ */}
-      <section
-        ref={corpRef}
-        className="relative px-6 md:px-12 lg:px-20 pb-32 overflow-visible"
-      >
-        {/* Blob verde fundo */}
-        <div
-          className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full pointer-events-none opacity-25"
-          style={{
-            background: 'radial-gradient(ellipse at 80% 20%, #1B5E3A 0%, transparent 70%)',
-            filter: 'blur(100px)',
-          }}
-          aria-hidden="true"
-        />
 
-        <div className="relative max-w-7xl mx-auto">
-
-          {/* Label de seção */}
-          <div
-            className={`mb-12 transition-all duration-700 ease-out
-              ${corpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
-          >
-            <span className="inline-flex items-center gap-2 text-xs font-bold text-[#2D5A1B] tracking-widest uppercase bg-[#4A8532]/08 border border-[#4A8532]/15 rounded-full px-4 py-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#4A8532]" />
-              B2B · Escala Corporativa
-            </span>
-          </div>
-
-          {/* Layout Z-Pattern: Imagem Esq + Card Dir com overlap */}
-          <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-0">
-
-            {/* Imagem corporativa */}
-            <div
-              className={`relative md:w-[58%] shrink-0 transition-all duration-900 ease-out
-                ${corpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
-            >
-              {/* Moldura decorativa */}
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#87A922]/20 to-[#4A8532]/10 -z-10" aria-hidden="true" />
-
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(10,46,31,0.16)]">
-                {/* Halo verde atrás da imagem */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                  aria-hidden="true"
-                >
-                  <div className="w-[85%] h-[85%] rounded-full bg-[#c8dfc0] opacity-40 blur-3xl" />
-                </div>
-                <img
-                  src={imgCorp}
-                  alt="Horta corporativa Raiz Solar"
-                  className="relative w-full h-full object-cover min-h-[420px] mix-blend-multiply drop-shadow-2xl"
-                  style={{ aspectRatio: '4/3' }}
-                />
-                {/* Overlay gradiente sutil na base */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                  style={{
-                    background: 'linear-gradient(to top, rgba(10,46,31,0.12), transparent)',
-                  }}
-                  aria-hidden="true"
-                />
-              </div>
-
-              {/* Badge flutuante: Certificado ESG */}
-              <div
-                className="absolute -bottom-5 left-8 z-30
-                  bg-white/60 backdrop-blur-lg border border-white/60
-                  rounded-2xl px-5 py-3 shadow-[0_4px_24px_rgba(10,46,31,0.12)]
-                  flex items-center gap-3 animate-float"
-                style={{ animationDelay: '0.5s' }}
-              >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#4A8532] to-[#1D4330] flex items-center justify-center">
-                  <ShieldCheck className="w-4.5 h-4.5 text-white w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[0.68rem] font-bold text-[#0A2E1F] leading-none">
-                    Certificado ESG
-                  </p>
-                  <p className="text-[0.6rem] text-[#5A7A6B] font-inter mt-0.5">
-                    Conformidade garantida
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Glassmorphism: sobrepõe a imagem com -ml */}
-            <div
-              className={`relative md:-ml-16 z-20 self-center transition-all duration-900 ease-out delay-200
-                ${corpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}
-                mt-8 md:mt-0`}
-            >
-              <div
-                className="bg-white/70 backdrop-blur-xl border border-white/40
-                  shadow-[0_24px_80px_rgba(10,46,31,0.14),0_4px_16px_rgba(10,46,31,0.06)]
-                  rounded-3xl p-8 md:p-10 max-w-md"
-              >
-                {/* Gradiente interno sutil */}
-                <div
-                  className="absolute inset-0 rounded-3xl pointer-events-none"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 100%)',
-                  }}
-                  aria-hidden="true"
-                />
-
-                <div className="relative z-10">
-                  {/* Ícone + Título */}
-                  <div className="flex items-center gap-4 mb-7">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#4A8532] to-[#1D4330] flex items-center justify-center shadow-lg shadow-[#4A8532]/30">
-                      <TrendingUp className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-[0.65rem] font-bold tracking-widest uppercase text-[#87A922] mb-0.5">
-                        Solução B2B
-                      </p>
-                      <h2 className="text-2xl font-extrabold text-[#0A2E1F] leading-tight">
-                        Projetos Corporativos
-                      </h2>
-                    </div>
-                  </div>
-
-                  {/* Descrição */}
-                  <p className="text-[#5A7A6B] text-sm font-inter leading-relaxed mb-8">
-                    Transforme escritórios, restaurantes e espaços comerciais em
-                    ambientes biofílicos de alta performance. Do projeto à operação,
-                    nós gerenciamos tudo.
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-5 mb-9">
-                    {corporateFeatures.map((f) => (
-                      <FeatureItem key={f.label} {...f} />
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <div className="flex flex-col sm:flex-row gap-3 items-start">
-                    <a
-                      href="#contato"
-                      id="cta-corporativo"
-                      className="group inline-flex items-center gap-2.5
-                        bg-gradient-to-br from-[#4A8532] to-[#1D4330]
-                        text-white font-semibold text-sm
-                        px-7 py-3.5 rounded-full
-                        shadow-[0_6px_24px_rgba(74,133,50,0.35)]
-                        hover:shadow-[0_10px_36px_rgba(74,133,50,0.45)]
-                        hover:-translate-y-1 transition-all duration-300 active:scale-[0.97]"
-                    >
-                      Falar com Consultor
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </a>
-                    <a
-                      href="#tecnologia"
-                      className="inline-flex items-center gap-1.5 text-[#4A8532] font-semibold text-sm self-center
-                        border-b border-[#87A922]/50 pb-0.5 hover:border-[#87A922] transition-colors duration-200"
-                    >
-                      Ver tecnologia
-                    </a>
-                  </div>
-
-                  {/* Mini stat */}
-                  <div className="mt-8 pt-6 border-t border-[#0A2E1F]/8 flex items-center gap-6">
-                    <div>
-                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">120+</p>
-                      <p className="text-[0.65rem] text-[#5A7A6B] font-inter mt-1 uppercase tracking-wide">
-                        Empresas Atendidas
-                      </p>
-                    </div>
-                    <div className="w-px h-8 bg-[#0A2E1F]/10" />
-                    <div>
-                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">98%</p>
-                      <p className="text-[0.65rem] text-[#5A7A6B] font-inter mt-1 uppercase tracking-wide">
-                        Taxa de Renovação
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ════════════════════════════════════════
           SOLUÇÃO 2: RESIDENCIAL — Card Esq sobreposto, Imagem Dir
@@ -428,16 +215,7 @@ export default function Solucoes() {
 
         <div className="relative max-w-7xl mx-auto">
 
-          {/* Label da seção — alinhado à direita no desktop */}
-          <div
-            className={`mb-12 text-left md:text-right transition-all duration-700 ease-out
-              ${residVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
-          >
-            <span className="inline-flex items-center gap-2 text-xs font-bold text-[#2D5A1B] tracking-widest uppercase bg-[#87A922]/10 border border-[#87A922]/20 rounded-full px-4 py-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#87A922]" />
-              B2C · Uso Doméstico
-            </span>
-          </div>
+          {/* Layout: Imagem Dir + Card Esq */}
 
           {/* Layout Z-Pattern invertido: Card Esq + Imagem Dir */}
           <div className="flex flex-col md:flex-row-reverse items-stretch gap-0">
@@ -519,7 +297,7 @@ export default function Solucoes() {
                     </div>
                     <div>
                       <p className="text-[0.65rem] font-bold tracking-widest uppercase text-[#87A922] mb-0.5">
-                        Solução B2C
+                        Sistemas Residenciais
                       </p>
                       <h2 className="text-2xl font-extrabold text-[#0A2E1F] leading-tight">
                         Sistemas Residenciais
@@ -576,7 +354,7 @@ export default function Solucoes() {
                     </div>
                     <div className="w-px h-8 bg-[#0A2E1F]/10" />
                     <div>
-                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">70%</p>
+                      <p className="text-2xl font-extrabold text-[#0A2E1F] leading-none">20%-70%</p>
                       <p className="text-[0.65rem] text-[#5A7A6B] font-inter mt-1 uppercase tracking-wide">
                         Economia Mensal
                       </p>
@@ -660,8 +438,8 @@ export default function Solucoes() {
             </p>
           </div>
 
-          {/* Grid 3 colunas dos pilares */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Grid 2 colunas dos pilares */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 max-w-3xl mx-auto">
             {techPillars.map((pillar, index) => (
               <div
                 key={pillar.id}

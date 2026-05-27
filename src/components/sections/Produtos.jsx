@@ -1,14 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
-  Lightbulb,
-  Waves,
-  Wifi,
   Leaf,
   Zap,
   FlaskConical,
-  Layers,
-  BarChart3,
-  Smartphone,
   Package,
   ArrowRight,
   CheckCircle2,
@@ -19,7 +13,6 @@ import {
 } from 'lucide-react';
 import imgHero from '../../assets/raiz-hero-produto.png';
 import imgSmartHome from '../../assets/raiz-smart-home.png';
-import imgCorporate from '../../assets/raiz-corporate-tower.png';
 
 /* ─────────────────────────────────────────────
    Micro-hook: scroll reveal
@@ -116,15 +109,6 @@ const ecosystemItems = [
     title: 'Os Insumos',
     desc: 'Kit de sementes e solução nutritiva premium entregue na sua porta todo mês. Sem sair de casa, sem complicação.',
     badge: 'Entrega Mensal',
-  },
-  {
-    id: 'app',
-    icon: <Smartphone className="w-10 h-10" />,
-    color: 'from-[#1B5E3A] to-[#114232]',
-    glow: 'rgba(27,94,58,0.3)',
-    title: 'O App',
-    desc: 'Monitoramento 24h na palma da mão. pH, nutrientes, luminosidade e alertas automáticos — iOS e Android.',
-    badge: 'IoT em Tempo Real',
   },
 ];
 
@@ -239,33 +223,7 @@ export default function Produtos() {
             style={{ maxHeight: '520px' }}
           />
 
-          {/* ── Hotspot 1: LEDs Full-Spectrum — topo esquerdo ── */}
-          <Hotspot
-            icon={<Lightbulb className="w-4 h-4" />}
-            label="LEDs Full-Spectrum"
-            className="-top-6 left-[-10%] lg:-left-16"
-            delay={0}
-          />
-
-          {/* ── Hotspot 2: Bomba Ultrasilenciosa — centro esquerdo ── */}
-          <Hotspot
-            icon={<Waves className="w-4 h-4" />}
-            label="Bomba Ultrasilenciosa"
-            className="top-[45%] left-[-15%] lg:-left-20"
-            delay={1}
-          />
-
-          {/* ── Hotspot 3: Sensores IoT — direita ── */}
-          <Hotspot
-            icon={<Wifi className="w-4 h-4" />}
-            label="Sensores IoT"
-            className="top-[30%] right-[-10%] lg:-right-14"
-            delay={2}
-          />
-
-          {/* Linha decorativa conector (apenas decorativa) */}
-          <div className="hidden md:block absolute top-[45%] left-[12%] w-16 h-px bg-gradient-to-r from-[#A4C639]/50 to-transparent pointer-events-none" aria-hidden="true" />
-          <div className="hidden md:block absolute top-[30%] right-[12%] w-16 h-px bg-gradient-to-l from-[#A4C639]/50 to-transparent pointer-events-none" aria-hidden="true" />
+          {/* Linhas decorativas removidas com os hotspots */}
         </div>
 
         {/* — Mini CTA Dark — */}
@@ -341,19 +299,19 @@ export default function Produtos() {
               Escolha o seu modelo
             </span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0A2E1F] leading-[1.08] tracking-tight mb-4">
-              Dois modelos.
+              O modelo perfeito
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A8532] to-[#87A922]">
-                Uma única missão.
+                para a sua casa.
               </span>
             </h2>
             <p className="text-[#5A7A6B] text-lg font-inter leading-relaxed">
-              Do apartamento ao escritório corporativo — temos o sistema certo para o seu espaço e os seus objetivos.
+              Design premiado, tecnologia de ponta e facilidade de uso — tudo pensado para o seu lar.
             </p>
           </div>
 
-          {/* Grid 2 colunas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {/* Grid 1 coluna centralizado — apenas Raiz Smart Home */}
+          <div className="flex justify-center">
 
             {/* ── Painel 1: Raiz Smart Home ── */}
             <div
@@ -456,107 +414,6 @@ export default function Produtos() {
               </div>
             </div>
 
-            {/* ── Painel 2: Raiz Corporate Tower ── */}
-            <div
-              className={`group relative transition-all duration-700 ease-out
-                ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-              style={{ transitionDelay: '150ms' }}
-            >
-              {/* Moldura premium — mais escura para B2B */}
-              <div
-                className="absolute -inset-[2px] rounded-[2.6rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: 'linear-gradient(135deg, rgba(10,46,31,0.25), rgba(74,133,50,0.15), transparent)' }}
-                aria-hidden="true"
-              />
-
-              <div
-                className="relative bg-white/60 backdrop-blur-xl border border-white/40
-                  shadow-[0_8px_40px_rgba(10,46,31,0.08)]
-                  group-hover:shadow-[0_20px_60px_rgba(10,46,31,0.14)]
-                  rounded-[2.5rem] p-8 overflow-hidden
-                  transition-all duration-500 ease-out"
-              >
-                {/* Destaque Premium — ribbon no topo */}
-                <div className="absolute top-0 left-8 right-8 h-1 rounded-b-full bg-gradient-to-r from-[#4A8532] via-[#87A922] to-[#4A8532] opacity-70" aria-hidden="true" />
-
-                {/* Badge Corporativo */}
-                <div className="absolute top-7 right-7 flex items-center gap-2 bg-[#0A2E1F]/8 border border-[#0A2E1F]/15 text-[#0A2E1F] text-[0.6rem] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#0A2E1F]/60" />
-                  Corporativo
-                </div>
-
-                {/* Imagem do produto */}
-                <div className="relative flex items-center justify-center mb-8 min-h-[280px]">
-                  <div
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                    aria-hidden="true"
-                  >
-                    <div className="w-56 h-56 rounded-full bg-[#b5d4b0] opacity-45 blur-3xl" />
-                  </div>
-                  <img
-                    src={imgCorporate}
-                    alt="Raiz Corporate Tower"
-                    className="relative w-full max-w-[260px] object-contain drop-shadow-2xl mix-blend-multiply
-                      group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Badge ESG flutuante */}
-                  <div
-                    className="absolute bottom-0 right-4 bg-gradient-to-br from-[#4A8532] to-[#1D4330]
-                      text-white rounded-2xl px-4 py-2.5 shadow-lg
-                      flex items-center gap-2.5 animate-float-slow"
-                    style={{ animationDelay: '1.2s' }}
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-[#A4C639]" />
-                    <span className="text-[0.65rem] font-bold font-inter">Certificado ESG</span>
-                  </div>
-                </div>
-
-                {/* Conteúdo textual */}
-                <div>
-                  <p className="text-[0.65rem] font-bold tracking-widest uppercase text-[#4A8532] mb-1">Modelo Corporativo</p>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0A2E1F] tracking-tight mb-2">
-                    Raiz Corporate Tower
-                  </h3>
-                  <p className="text-[#5A7A6B] text-sm font-inter leading-relaxed mb-6">
-                    Escalabilidade para escritórios, refeitórios e restaurantes. Gestão completa via dashboard com relatórios de impacto.
-                  </p>
-
-                  {/* Especificações */}
-                  <ul className="mb-8">
-                    {corporateSpecs.map((s) => (
-                      <SpecRow key={s.label} {...s} />
-                    ))}
-                  </ul>
-
-                  {/* Preço e CTA */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                    <div>
-                      <p className="text-[0.65rem] text-[#5A7A6B] font-inter uppercase tracking-wide mb-0.5">Consulte condições</p>
-                      <p className="text-3xl font-extrabold text-[#0A2E1F] leading-none">
-                        Sob medida
-                        <span className="text-base font-medium text-[#5A7A6B] ml-1">/ projeto</span>
-                      </p>
-                    </div>
-                    <a
-                      href="#contato"
-                      id="cta-corporate-tower"
-                      className="group/btn inline-flex items-center gap-2.5
-                        bg-gradient-to-br from-[#4A8532] to-[#1D4330]
-                        text-white font-semibold text-sm
-                        px-6 py-3 rounded-full
-                        shadow-[0_6px_20px_rgba(74,133,50,0.35)]
-                        hover:shadow-[0_10px_32px_rgba(74,133,50,0.45)]
-                        hover:-translate-y-0.5
-                        transition-all duration-300 active:scale-[0.97]"
-                    >
-                      Ver detalhes
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -619,8 +476,8 @@ export default function Produtos() {
                 </p>
               </div>
 
-              {/* Grid 3 colunas */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-14">
+              {/* Grid 2 colunas centralizadas — Equipamento + Insumos */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto mb-14">
                 {ecosystemItems.map((item, index) => (
                   <div
                     key={item.id}
