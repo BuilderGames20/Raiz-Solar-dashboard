@@ -10,6 +10,7 @@ import {
   Droplets,
   Settings2,
   Sun,
+  Wifi,
 } from 'lucide-react';
 import imgHero from '../../assets/raiz-hero-produto.png';
 import imgSmartHome from '../../assets/raiz-smart-home.png';
