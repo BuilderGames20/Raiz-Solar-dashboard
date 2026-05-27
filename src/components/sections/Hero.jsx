@@ -74,10 +74,10 @@ export default function HeroSection() {
           </h1>
 
           {/* Descrição */}
-          <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-md leading-relaxed font-inter">
-            Cultive hortaliças frescas, <strong className="text-gray-800 font-bold">sem agrotóxicos</strong> e 100%{' '}
-            <strong className="text-gray-800 font-bold">sustentáveis</strong> diretamente na sua cozinha ou varanda.
-            Reduza despesas com o mercado e <strong className="text-gray-800 font-bold">colha saúde</strong> todos os dias.
+          <p className="text-white/90 text-base sm:text-lg mb-10 max-w-md leading-relaxed font-inter">
+            Cultive hortaliças frescas, <strong className="text-white font-bold">sem agrotóxicos</strong> e 100%{' '}
+            <strong className="text-white font-bold">sustentáveis</strong> diretamente na sua cozinha ou varanda.
+            Reduza despesas com o mercado e <strong className="text-white font-bold">colha saúde</strong> todos os dias.
           </p>
 
           {/* Botão CTA */}
