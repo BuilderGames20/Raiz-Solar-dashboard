@@ -237,11 +237,11 @@ export default function Impacto() {
                 aria-hidden="true"
               />
 
-              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-8">
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-8 flex-wrap">
                 {/* Número gigante */}
                 <div className="shrink-0">
                   <div className="flex items-start gap-1">
-                    <span className="font-black text-[6rem] lg:text-[8rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#0ea5e9] via-[#2563eb] to-[#1D4330] select-none">
+                    <span className="font-black text-[4.5rem] lg:text-[6rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#0ea5e9] via-[#2563eb] to-[#1D4330] select-none">
                       50%-90%
                     </span>
                   </div>
@@ -258,7 +258,7 @@ export default function Impacto() {
                 <div className="hidden md:block w-px h-36 bg-gradient-to-b from-transparent via-[#0A2E1F]/12 to-transparent shrink-0" aria-hidden="true" />
 
                 {/* Texto */}
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 min-w-0 flex-1">
                   <h2 className="text-2xl lg:text-3xl font-extrabold text-[#0A2E1F] leading-tight tracking-tight">
                     Menos água utilizada
                     <br />

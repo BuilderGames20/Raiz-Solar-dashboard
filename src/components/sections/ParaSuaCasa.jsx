@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
-  Smartphone,
   Leaf,
   Wallet,
   Home,
@@ -74,7 +73,6 @@ const checkpoints = [
   'Instalação incluída e garantida',
   'Suporte técnico por 12 meses',
   'Kit de mudas no primeiro mês grátis',
-  'App de monitoramento iOS & Android',
 ];
 
 /* ─────────────────────────────────────────────
@@ -279,36 +277,8 @@ export default function ParaSuaCasa() {
               className="relative z-10 w-full max-w-[520px] object-contain drop-shadow-2xl mix-blend-multiply animate-float"
             />
 
-            {/* ── Card Glassmorphism: App Monitoring ── */}
-            <div
-              className="absolute bottom-4 right-0 lg:-right-8 z-40
-                         bg-white/40 backdrop-blur-lg border border-white/50
-                         rounded-3xl p-4 shadow-[0_8px_40px_rgba(10,46,31,0.12)]
-                         flex items-center gap-4 w-64
-                         animate-float"
-              style={{ animationDelay: '1s' }}
-            >
-              {/* Ícone */}
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4A8532] to-[#1D4330] flex items-center justify-center shrink-0 shadow-md">
-                <Smartphone className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <p className="text-[0.72rem] font-bold text-[#0A2E1F] leading-tight">
-                  Monitoramento
-                </p>
-                <p className="text-[0.72rem] font-bold text-[#0A2E1F] leading-tight">
-                  via App
-                </p>
-                <div className="flex items-center gap-1.5 mt-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[0.62rem] text-[#5A7A6B] font-inter font-medium">
-                    Online agora
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            {/* ── Badge flutuante: Certified Organic ── */}
+            {/* Badge flutuante: Certified Organic ── */}
             <div
               className="absolute top-8 -left-4 lg:-left-10 z-40
                          bg-white/50 backdrop-blur-lg border border-white/60

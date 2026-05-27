@@ -4,7 +4,7 @@ import heroImage from '../../assets/hydroponic-shelf.png';
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-[#f0f5ee] font-poppins">
+    <div className="relative w-full min-h-screen overflow-hidden bg-[#f0f5ee] font-poppins flex flex-col justify-center">
 
       {/* ── Fundo Orgânico: blobs SVG suaves ── */}
 
