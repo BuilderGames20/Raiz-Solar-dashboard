@@ -32,27 +32,7 @@ function useInView(threshold = 0.1) {
   return [ref, visible];
 }
 
-/* ─────────────────────────────────────────────
-   Hotspot badge dark glass
-───────────────────────────────────────────── */
-function Hotspot({ icon, label, className, delay = 0 }) {
-  return (
-    <div
-      className={`hidden md:flex absolute items-center gap-2
-        bg-white/10 backdrop-blur-md border border-white/20
-        text-white rounded-full px-4 py-2 text-sm font-medium
-        shadow-[0_4px_20px_rgba(0,0,0,0.3)]
-        animate-float
-        ${className}`}
-      style={{ animationDelay: `${delay}s` }}
-    >
-      {/* Conector ponto */}
-      <span className="w-2 h-2 rounded-full bg-[#A4C639] shadow-[0_0_8px_rgba(164,198,57,0.8)] shrink-0" />
-      <span className="shrink-0 text-[#A4C639]">{icon}</span>
-      <span className="whitespace-nowrap font-inter text-xs font-semibold">{label}</span>
-    </div>
-  );
-}
+
 
 /* ─────────────────────────────────────────────
    Spec row
@@ -83,14 +63,7 @@ const smartHomeSpecs = [
   { icon: <Settings2 className="w-4 h-4" />,   label: 'Manutenção',         value: '5 min/semana' },
 ];
 
-const corporateSpecs = [
-  { icon: <Layers className="w-4 h-4" />,       label: 'Capacidade',         value: '120 mudas' },
-  { icon: <Zap className="w-4 h-4" />,           label: 'Consumo',            value: '80 W/h' },
-  { icon: <Droplets className="w-4 h-4" />,      label: 'Reservatório',       value: '60 litros' },
-  { icon: <BarChart3 className="w-4 h-4" />,     label: 'Gestão',             value: 'Dashboard Web' },
-  { icon: <Wifi className="w-4 h-4" />,           label: 'Conectividade',      value: 'IoT + 4G Backup' },
-  { icon: <CheckCircle2 className="w-4 h-4" />, label: 'Manutenção',         value: 'Equipe dedicada' },
-];
+
 
 const ecosystemItems = [
   {

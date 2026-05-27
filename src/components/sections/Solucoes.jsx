@@ -8,7 +8,6 @@ import {
   Salad,
   PiggyBank,
   CheckCircle2,
-  Wifi,
 } from 'lucide-react';
 import imgResid from '../../assets/horta-residencial-2.png';
 
@@ -425,8 +424,8 @@ export default function Solucoes() {
               ${techVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-[#A4C639] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full mb-6">
-              <Wifi className="w-3.5 h-3.5" />
-              Infraestrutura IoT
+              <Leaf className="w-3.5 h-3.5" />
+              Tecnologia de Cultivo
             </span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-4">
               A Tecnologia{' '}
@@ -488,7 +487,6 @@ export default function Solucoes() {
                       <span className="text-xs font-semibold font-inter">
                         {index === 0 && 'Alertas em tempo real'}
                         {index === 1 && 'LED Full Spectrum'}
-                        {index === 2 && 'iOS & Android'}
                       </span>
                     </div>
 
