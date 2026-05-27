@@ -13,12 +13,12 @@
   --color-text-muted:  #64748b;
   --color-border:      rgba(0, 0, 0, 0.07);
 
-  /* Azuis tecnológicos */
-  --color-deep:        #050e1f;
-  --color-navy:        #0a2558;
-  --color-blue:        #0369a1;
-  --color-sky:         #0ea5e9;
-  --color-sky-light:   #38bdf8;
+  /* Verdes tecnológicos oficiais Raiz Solar */
+  --color-deep:        #0A2E1F; /* brand-green-dark */
+  --color-navy:        #114232; /* brand-green-mid */
+  --color-blue:        #1B5E3A; /* brand-emerald */
+  --color-sky:         #87A922; /* brand-green-light */
+  --color-sky-light:   #A4C639; /* brand-green-glow */
 
   /* Semânticos */
   --color-green:       #10b981;
@@ -78,19 +78,19 @@ body {
 }
 .hero-section::before {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(164,198,57,0.18) 0%, transparent 70%);
   top: -120px; right: -80px;
 }
 .hero-section::after {
   width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(3,105,161,0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(27,94,58,0.22) 0%, transparent 70%);
   bottom: -60px; left: -40px;
 }
 
 .hero-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(56,189,248,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(164,198,57,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -98,8 +98,20 @@ body {
   position: relative;
   height: clamp(80px, 12vw, 120px);
   margin-bottom: 1.25rem;
-  filter: drop-shadow(0 4px 16px rgba(56,189,248,0.4));
+  filter: drop-shadow(0 4px 16px rgba(164,198,57,0.4));
   z-index: 1;
+}
+
+.logo-text {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(0 4px 16px rgba(164,198,57,0.35));
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
 }
 
 .hero-section h1 {
@@ -115,7 +127,7 @@ body {
 .subtitle {
   position: relative;
   font-size: clamp(0.95rem, 2vw, 1.2rem);
-  color: #bae6fd;
+  color: #dcf0cf;
   margin-top: 0.5rem;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -133,7 +145,7 @@ body {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius-pill);
-  color: #e0f2fe;
+  color: #ecf7e7;
   font-size: 0.9rem;
   font-weight: 500;
   z-index: 1;
@@ -342,7 +354,7 @@ body {
 }
 
 /* ── 11. Cores de Qualidade (badge + barra) ───────────────── */
-.qualidade-boa     { background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%); }
+.qualidade-boa     { background: linear-gradient(135deg, #10b981 0%, #87a922 100%); }
 .qualidade-regular { background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); }
 .qualidade-ruim    { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
 
